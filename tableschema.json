@@ -1,0 +1,156 @@
+{
+    "profile": "tabular-data-package",
+    "title": "ORDS Extra - 2024/07",
+    "description": "Additional data to complement that of the Open Repair Alliance.",
+    "homepage": "https://github.com/zenlan/ords-extra",
+    "contributors": [
+      {
+        "title": "Monique Szpak",
+        "role": "author"
+      }
+    ],
+    "licenses": [
+      {
+        "name": "CC BY-NC-ND 4.0",
+        "title": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International ",
+        "path": "https://creativecommons.org/licenses/by-nc-nd/4.0"
+      }
+    ],
+    "resources": [
+      {
+        "profile": "tabular-data-resource",
+        "format": "CSV",
+        "name": "ords_problem_english.csv",
+        "path": "https://github.com/zenlan/ords-extra/",
+        "title": "ORDS Problem English",
+        "schema": {
+          "fields": [
+            {
+              "name": "id",
+              "type": "string",
+              "format": "default",
+              "title": "ID",
+              "description": "ORDS unique identifier.",
+              "constraints": {
+                  "pattern": "^[a-z]+-[0-9]+$",
+                  "unique": "true"
+              }
+            },
+            {
+              "name": "problem_en",
+              "type": "string",
+              "format": "default",
+              "title": "Problem text",
+              "description": "English, free-text description of the repair attempt.",
+              "missingValues": [""]
+            }
+          ],
+          "primaryKey": "id"
+        }
+      },
+      {
+        "profile": "tabular-data-resource",
+        "format": "CSV",
+        "name": "ords_problem_language.csv",
+        "path": "https://github.com/zenlan/ords-extra/",
+        "title": "ORDS Problem Language",
+        "schema": {
+          "fields": [
+            {
+              "name": "id",
+              "type": "string",
+              "format": "default",
+              "title": "ID",
+              "description": "ORDS unique identifier.",
+              "constraints": {
+                  "pattern": "^[a-z]+-[0-9]+$",
+                  "unique": "true"
+              }
+            },
+            {
+              "name": "language",
+              "type": "string",
+              "format": "default",
+              "title": "Language",
+              "description": "2 character ISO language code.",
+              "constraints": {
+                  "pattern": "^[a-z]{2}$"
+              }
+            }
+          ],
+          "primaryKey": "id"
+        }
+      },
+      {
+        "profile": "tabular-data-resource",
+        "format": "CSV",
+        "name": "ords_product_english.csv",
+        "path": "https://github.com/zenlan/ords-extra/",
+        "title": "ORDS Product English",
+        "schema": {
+          "fields": [
+            {
+              "name": "id",
+              "type": "string",
+              "format": "default",
+              "title": "ID",
+              "description": "ORDS unique identifier.",
+              "constraints": {
+                  "pattern": "^[a-z]+-[0-9]+$",
+                  "unique": "true"
+              }
+            },
+            {
+              "name": "product_en",
+              "type": "string",
+              "format": "default",
+              "title": "Product",
+              "description": "English, free-text, short description of the device type.",
+              "missingValues": [""]
+            }
+          ],
+          "primaryKey": "id"
+        }
+      },
+      {
+        "profile": "tabular-data-resource",
+        "format": "CSV",
+        "name": "ords_unu_keys.csv",
+        "path": "https://github.com/zenlan/ords-extra/",
+        "title": "ORDS UNU key map",
+        "schema": {
+          "fields": [
+            {
+              "name": "id",
+              "type": "string",
+              "format": "default",
+              "title": "ID",
+              "description": "ORDS unique identifier.",
+              "constraints": {
+                  "pattern": "^[a-z]+-[0-9]+$",
+                  "unique": "true"
+              }
+            },
+            {
+              "name": "unu_key",
+              "type": "integer",
+              "format": "default",
+              "title": "UNU ID",
+              "description": "UNU key unique ID.",
+              "constraints": {
+                  "pattern": "^[0-9]+$"
+              }
+            },
+            {
+              "name": "unu_str",
+              "type": "string",
+              "format": "default",
+              "title": "UNU title",
+              "description": "UNU key text descriptor."
+            }
+        ],
+        "primaryKey": "id"
+        }
+      }
+    ]
+  }
