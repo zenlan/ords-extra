@@ -21,10 +21,10 @@ You can get the ORDS data in a [zipfile](https://openrepair.org/open-data/downlo
 
 ## Files
 
-* `ords_problem_language` 2 char ISO language codes for `problem` values.
-* `ords_problem_english` English translations of `problem` values.
-* `ords_product_english` English translations of the `product` part of `partner_product_category` values; this indicates the type of devices presented.
-* `ords_unu_keys` United Nations University category unique identifiers.
+* `ords_problem_language.csv` 2 char ISO language codes for `problem` values.
+* `ords_problem_english.csv` English translations of `problem` values.
+* `ords_product_english.csv` English translations of the `product` part of `partner_product_category` values.
+* `ords_unu_keys.csv` United Nations University (Unitar) categorisation.
 
 ## Translations
 
