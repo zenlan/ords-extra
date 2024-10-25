@@ -17,9 +17,7 @@ This is a Work In Progress!
 
 The data files in this repo are designed to join to the 2024-07 Open Repair Data aggregate from the [Open Repair Alliance](https://openrepair.org/)
 
-[Zipped datasets](https://openrepair.org/open-data/downloads/) are available for download.
-
-Also available in [Github](https://github.com/openrepair/)
+You can get the ORDS data in a [zipfile](https://openrepair.org/open-data/downloads/) or from [Github](https://github.com/openrepair/)
 
 ## Files
 
