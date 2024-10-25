@@ -15,11 +15,11 @@ This is a Work In Progress!
 
 ## Open Repair Data
 
-Compiled and published datasets of repair data from the [Open Repair Alliance](https://openrepair.org/)
+The data files in this repo are designed to join to the 2024-07 Open Repair Data aggregate from the [Open Repair Alliance](https://openrepair.org/)
 
 [Zipped datasets](https://openrepair.org/open-data/downloads/) are available for download.
 
-[Github](https://github.com/openrepair/)
+Also available in [Github](https://github.com/openrepair/)
 
 ## Files
 
@@ -44,11 +44,13 @@ Language detection and translation of the 'product' values has only just begun. 
 
 ## UNU Keys
 
-Maps the ORDS `product_category` values to a set known as "UNU Keys" produced by [UNITAR - United Nations Institute for Training and Research](https://www.unitar.org/). These keys are commonly found in academic papers dealing with  subjects around e-waste and trickle out to wider reports and news stories, e.g. [OF 16 BILLION MOBILE PHONES POSSESSED WORLDWIDE, 5.3 BILLION WILL BECOME WASTE IN 2022](https://www.unitar.org/about/news-stories/news/16-billion-mobile-phones-possessed-worldwide-53-billion-will-become-waste-2022). Note that UNITAR is reviewing their codes as part of a 4 year project due to conclude December 2023.
+Maps the ORDS `product_category` values to a set known as "UNU Keys" produced by [UNITAR - United Nations Institute for Training and Research](https://www.unitar.org/). These keys are commonly found in academic papers dealing with  subjects around e-waste and trickle out to wider reports and news stories, e.g. [OF 16 BILLION MOBILE PHONES POSSESSED WORLDWIDE, 5.3 BILLION WILL BECOME WASTE IN 2022](https://www.unitar.org/about/news-stories/news/16-billion-mobile-phones-possessed-worldwide-53-billion-will-become-waste-2022).
 
 The UNU average weights (kgs) in the file are lifted from [E-waste statistics: Guidelines on classifications, reporting and indicators](https://www.researchgate.net/publication/271845217_E-waste_statistics_Guidelines_on_classifications_reporting_and_indicators).
 
 The Restart Project compiles emissions and waste data that can be mapped to ORDS and UNU categories, for details [contact them directly](https://therestartproject.org/contact/).
+
+Should the UNU keys change, the mapping in the UNU keys file will be updated.
 
 ### Mapping categories to keys
 
