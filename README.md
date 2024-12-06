@@ -6,8 +6,7 @@ New columns with values resulting from a combination of translation tools, regex
 
 This is a Work In Progress!
 
-* Dutch `problem` text translations are not complete.
-* `product` string translations are far from complete.
+* Some `problem` text strings with length less than 16 chars have not yet been translated.
 
 ## Licence
 
@@ -38,7 +37,7 @@ Over time, I have tried a variety of tools and methods to determine the language
 
 Using a combination of the above tools, I eventually developed a language detection model that worked better with the repair data `problem` text. Manual tweaking was nonetheless required and the language map will, no doubt, still contain some erroneous detections.
 
-Language detection and translation of the `product` values has only just begun. The `product` value is not necessarily in the same language as the `problem` text.
+The `product` value is not necessarily in the same language as the `problem` text.
 
 ## UNU Keys
 
