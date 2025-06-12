@@ -4,13 +4,9 @@ Additional data for the 2024-07 ORDS dataset from the Open Repair Alliance.
 
 New columns with values resulting from a combination of translation tools, regex matching scripts and a little machine learning.
 
-This is a Work In Progress!
-
-* Some `problem` text strings with length less than 16 chars have not yet been translated.
-
 ## Licence
 
-[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en)
+Made available under the CC BY-NC-ND 4.0 licence (https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) © Monique Szpak (https://github.com/zenlan/ords-extra).
 
 ## Open Repair Data
 
