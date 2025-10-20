@@ -1,6 +1,6 @@
 # ORDS Extra
 
-Additional data for the 2024-07 ORDS dataset from the Open Repair Alliance.
+Additional data for the 2024-07 ORDS dataset from the Open Repair Alliance. NOTE: not compatible with the 2025-07 dataset, a new version is in production.
 
 New columns with values resulting from a combination of translation tools, regex matching scripts and a little machine learning.
 
