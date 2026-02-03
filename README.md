@@ -1,8 +1,10 @@
 # ORDS Extra
 
-Additional data for the 2024-07 ORDS dataset from the Open Repair Alliance.
+Additional data for the 2025-07 ORDS dataset from the Open Repair Alliance.
 
 New columns with values resulting from a combination of translation tools, regex matching scripts and a little machine learning.
+
+NOTE: accuracy is not guaranteed. 
 
 ## Licence
 
@@ -10,15 +12,13 @@ Made available under the CC BY-NC-ND 4.0 licence (https://creativecommons.org/li
 
 ## Open Repair Data
 
-The data files in this repo are designed to join to the 2024-07 Open Repair Data aggregate from the [Open Repair Alliance](https://openrepair.org/)
+The data files in this repo are designed to join to the 2025-07 Open Repair Data aggregate from the [Open Repair Alliance](https://openrepair.org/)
 
 You can get the ORDS data in a [zipfile](https://openrepair.org/open-data/downloads/) or from [Github](https://github.com/openrepair/)
 
 ## Files
 
-* `ords_problem_language.csv` 2 char ISO language codes for `problem` values.
-* `ords_problem_english.csv` English translations of `problem` values.
-* `ords_product_english.csv` English translations of the `product` part of `partner_product_category` values.
+* `ords_problem_english.csv` English translation and 2 char ISO language code for each `problem` values.
 * `ords_unu_keys.csv` United Nations University (Unitar) categorisation.
 
 ## Translations
@@ -29,7 +29,7 @@ Repair data is hardly grammatically well-formed, it can contain international ch
 
 ### Language detection
 
-Over time, I have tried a variety of tools and methods to determine the language and translate the `problem` text. Google detect/translate is "adequate", DeepL somewhat better but not free and TranslateLocally can produce iffy results and does not have all of the language models required.
+Over time, I have tried a variety of tools and methods to determine the language and translate the `problem` text. Google detect/translate is "adequate", DeepL somewhat better but not free and Helsinki NLP can produce iffy results and does not have all of the language models required.
 
 Using a combination of the above tools, I eventually developed a language detection model that worked better with the repair data `problem` text. Manual tweaking was nonetheless required and the language map will, no doubt, still contain some erroneous detections.
 
@@ -53,10 +53,10 @@ The result is an improvement on the coarse one-to-one mapping of ORDS `product_c
 
 * Sometimes a mapping is not obvious from the `product` value, which could be empty, it could be that the `problem` text enabled the categorisation, e.g. `product`="steamer" could be anything, but the `problem` text may have indicated a "steam mop".
 
-* The matching process is not perfect, it has to work across 7 European languages, international characters, spelling mistakes, abbreviations, acronyms, jargon and brand names.
+* The matching process is not perfect, it has to work across at least 10 European languages and a couple of Asian languages, international characters, spelling mistakes, abbreviations, acronyms, jargon and brand names.
 
 * Manual revision is required to fine-tune the mappings but, given the volume, it is inevitable that some slip through the net
 
-* Work is in progress to translate all `product` values, this might make it easier to formulate regexes but would require excellent translations, which can be tricky to do on short strings full of typos, abbreviations etc.
+* Work is in progress to translate all `product` values, this might make it easier to formulate regexes but would require excellent translations, which can be tricky to achieve on short strings full of typos, abbreviations etc.
 
 * When a `product` does not find a regex match, it is assigned a default UNU key for its ORDS `product_category`.

@@ -1,6 +1,6 @@
 {
     "profile": "tabular-data-package",
-    "title": "ORDS Extra - 2024/07",
+    "title": "ORDS Extra - 2025/07",
     "description": "Additional data to complement that of the Open Repair Alliance.",
     "homepage": "https://github.com/zenlan/ords-extra",
     "contributors": [
@@ -37,35 +37,11 @@
               }
             },
             {
-              "name": "problem_en",
+              "name": "translator",
               "type": "string",
               "format": "default",
-              "title": "Problem text",
-              "description": "English, free-text description of the repair attempt.",
-              "missingValues": [""]
-            }
-          ],
-          "primaryKey": "id"
-        }
-      },
-      {
-        "profile": "tabular-data-resource",
-        "format": "CSV",
-        "name": "ords_problem_language.csv",
-        "path": "https://github.com/zenlan/ords-extra/",
-        "title": "ORDS Problem Language",
-        "schema": {
-          "fields": [
-            {
-              "name": "id",
-              "type": "string",
-              "format": "default",
-              "title": "ID",
-              "description": "ORDS unique identifier.",
-              "constraints": {
-                  "pattern": "^[a-z]+-[0-9]+$",
-                  "unique": "true"
-              }
+              "title": "Translator",
+              "description": "Tool used for the translation."
             },
             {
               "name": "language",
@@ -76,36 +52,13 @@
               "constraints": {
                   "pattern": "^[a-z]{2}$"
               }
-            }
-          ],
-          "primaryKey": "id"
-        }
-      },
-      {
-        "profile": "tabular-data-resource",
-        "format": "CSV",
-        "name": "ords_product_english.csv",
-        "path": "https://github.com/zenlan/ords-extra/",
-        "title": "ORDS Product English",
-        "schema": {
-          "fields": [
-            {
-              "name": "id",
-              "type": "string",
-              "format": "default",
-              "title": "ID",
-              "description": "ORDS unique identifier.",
-              "constraints": {
-                  "pattern": "^[a-z]+-[0-9]+$",
-                  "unique": "true"
-              }
             },
             {
-              "name": "product_en",
+              "name": "problem_en",
               "type": "string",
               "format": "default",
-              "title": "Product",
-              "description": "English, free-text, short description of the device type.",
+              "title": "Problem text",
+              "description": "English, free-text description of the repair attempt.",
               "missingValues": [""]
             }
           ],
@@ -130,6 +83,20 @@
                   "pattern": "^[a-z]+-[0-9]+$",
                   "unique": "true"
               }
+            },
+            {
+              "name": "product_category",
+              "type": "string",
+              "format": "default",
+              "title": "ORDS Product Category.",
+              "description": "Name of the ORDS product category."
+            },
+            {
+              "name": "product",
+              "type": "string",
+              "format": "default",
+              "title": "Product name",
+              "description": "Free text product name."
             },
             {
               "name": "unu_key",
