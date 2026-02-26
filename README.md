@@ -18,7 +18,8 @@ You can get the ORDS data in a [zipfile](https://openrepair.org/open-data/downlo
 
 ## Files
 
-* `ords_problem_english.csv` English translation and 2 char ISO language code for each `problem` values.
+* `ords_problem_en.csv` English translation and 2 char ISO language code for each `problem` value.
+* `ords_product_en.csv` English translation and 2 char ISO language code for each derived `product` value.
 * `ords_unu_keys.csv` United Nations University (Unitar) categorisation.
 
 ## Translations
