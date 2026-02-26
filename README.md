@@ -4,7 +4,7 @@ Additional data for the 2025-07 ORDS dataset from the Open Repair Alliance.
 
 New columns with values resulting from a combination of translation tools, regex matching scripts and a little machine learning.
 
-NOTE: accuracy is not guaranteed. 
+NOTE: accuracy is not guaranteed!
 
 ## Licence
 
@@ -29,11 +29,13 @@ Repair data is hardly grammatically well-formed, it can contain international ch
 
 ### Language detection
 
-Over time, I have tried a variety of tools and methods to determine the language and translate the `problem` text. Google detect/translate is "adequate", DeepL somewhat better but not free and Helsinki NLP can produce iffy results and does not have all of the language models required.
+Over time, I have tried a variety of tools and methods to determine the language and translate the `problem` text. Google detect/translate is adequate to a point, DeepL somewhat better but not free, while Helsinki NLP doesn't detect, can produce iffy translations and does not have all of the language models required. 
 
-Using a combination of the above tools, I eventually developed a language detection model that worked better with the repair data `problem` text. Manual tweaking was nonetheless required and the language map will, no doubt, still contain some erroneous detections.
+Using a combination of the above tools, I eventually developed a language detection model that worked better with the repair data `problem` text. Manual tweaking was nonetheless required and the language map will, no doubt, still contain some erroneous detections. 
 
-The `product` value is not necessarily in the same language as the `problem` text.
+As of 2026, I have found that the [Gemma3 AI model(https://ollama.com/library/translategemma)] can handle all of the required languages and produces translations comparable to that of DeepL. The `ords_problem_en.csv` file contains columns for some translations by DeepL, Helsinki-NLP and Google. The Gemma3 column contains all translations.
+
+The `product` value is not necessarily in the same language as the `problem` text and therefore requires it's own language detection. All of the above translation tools except for Gemma3 failed to provide anywhere near adequate translations. 
 
 ## UNU Keys
 

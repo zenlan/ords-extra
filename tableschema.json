@@ -1,123 +1,211 @@
 {
-    "profile": "tabular-data-package",
-    "title": "ORDS Extra - 2025/07",
-    "description": "Additional data to complement that of the Open Repair Alliance.",
-    "homepage": "https://github.com/zenlan/ords-extra",
-    "contributors": [
-      {
-        "title": "Monique Szpak",
-        "role": "author"
-      }
-    ],
-    "licenses": [
-      {
-        "name": "CC BY-NC-ND 4.0",
-        "title": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International ",
-        "path": "https://creativecommons.org/licenses/by-nc-nd/4.0"
-      }
-    ],
-    "resources": [
-      {
-        "profile": "tabular-data-resource",
-        "format": "CSV",
-        "name": "ords_problem_english.csv",
-        "path": "https://github.com/zenlan/ords-extra/",
-        "title": "ORDS Problem English",
-        "schema": {
-          "fields": [
-            {
-              "name": "id",
-              "type": "string",
-              "format": "default",
-              "title": "ID",
-              "description": "ORDS unique identifier.",
-              "constraints": {
-                  "pattern": "^[a-z]+-[0-9]+$",
-                  "unique": "true"
-              }
-            },
-            {
-              "name": "translator",
-              "type": "string",
-              "format": "default",
-              "title": "Translator",
-              "description": "Tool used for the translation."
-            },
-            {
-              "name": "language",
-              "type": "string",
-              "format": "default",
-              "title": "Language",
-              "description": "2 character ISO language code.",
-              "constraints": {
-                  "pattern": "^[a-z]{2}$"
-              }
-            },
-            {
-              "name": "problem_en",
-              "type": "string",
-              "format": "default",
-              "title": "Problem text",
-              "description": "English, free-text description of the repair attempt.",
-              "missingValues": [""]
+  "profile": "tabular-data-package",
+  "title": "ORDS Extra - 2025/07",
+  "description": "Additional data to complement that of the Open Repair Alliance.",
+  "homepage": "https://github.com/zenlan/ords-extra",
+  "contributors": [
+    {
+      "title": "Monique Szpak",
+      "role": "author"
+    }
+  ],
+  "licenses": [
+    {
+      "name": "CC BY-NC-ND 4.0",
+      "title": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International ",
+      "path": "https://creativecommons.org/licenses/by-nc-nd/4.0"
+    }
+  ],
+  "resources": [
+    {
+      "profile": "tabular-data-resource",
+      "format": "CSV",
+      "name": "ords_problem_en.csv",
+      "path": "https://github.com/zenlan/ords-extra/",
+      "title": "ORDS Problem English Translations",
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "default",
+            "title": "ID",
+            "description": "ORDS unique identifier.",
+            "constraints": {
+              "pattern": "^[a-z]+-[0-9]+$",
+              "unique": "true"
             }
-          ],
-          "primaryKey": "id"
-        }
-      },
-      {
-        "profile": "tabular-data-resource",
-        "format": "CSV",
-        "name": "ords_unu_keys.csv",
-        "path": "https://github.com/zenlan/ords-extra/",
-        "title": "ORDS UNU key map",
-        "schema": {
-          "fields": [
-            {
-              "name": "id",
-              "type": "string",
-              "format": "default",
-              "title": "ID",
-              "description": "ORDS unique identifier.",
-              "constraints": {
-                  "pattern": "^[a-z]+-[0-9]+$",
-                  "unique": "true"
-              }
-            },
-            {
-              "name": "product_category",
-              "type": "string",
-              "format": "default",
-              "title": "ORDS Product Category.",
-              "description": "Name of the ORDS product category."
-            },
-            {
-              "name": "product",
-              "type": "string",
-              "format": "default",
-              "title": "Product name",
-              "description": "Free text product name."
-            },
-            {
-              "name": "unu_key",
-              "type": "integer",
-              "format": "default",
-              "title": "UNU ID",
-              "description": "UNU key unique ID.",
-              "constraints": {
-                  "pattern": "^[0-9]+$"
-              }
-            },
-            {
-              "name": "unu_str",
-              "type": "string",
-              "format": "default",
-              "title": "UNU title",
-              "description": "UNU key text descriptor."
+          },
+          {
+            "name": "problem_language",
+            "type": "string",
+            "format": "default",
+            "title": "Language Code",
+            "description": "2 character ISO language code.",
+            "constraints": {
+              "pattern": "^[a-z]{2}$"
             }
+          },
+          {
+            "name": "en_gemma3",
+            "type": "string",
+            "format": "default",
+            "title": "Problem Text",
+            "description": "English, free-text description of the repair attempt, as translated by Gemma3",
+            "missingValues": [
+              ""
+            ]
+          },
+          {
+            "name": "en_deepl",
+            "type": "string",
+            "format": "default",
+            "title": "Problem Text",
+            "description": "English, free-text description of the repair attempt, as translated by DeepL",
+            "missingValues": [
+              ""
+            ]
+          },
+          {
+            "name": "en_helsinkinlp",
+            "type": "string",
+            "format": "default",
+            "title": "Problem Text",
+            "description": "English, free-text description of the repair attempt, as translated by Helsinki-NLP",
+            "missingValues": [
+              ""
+            ]
+          },
+          {
+            "name": "en_google",
+            "type": "string",
+            "format": "default",
+            "title": "Problem Text",
+            "description": "English, free-text description of the repair attempt, as translated by Google",
+            "missingValues": [
+              ""
+            ]
+          }
         ],
         "primaryKey": "id"
-        }
       }
-    ]
-  }
+    },
+    {
+      "profile": "tabular-data-resource",
+      "format": "CSV",
+      "name": "ords_product_en.csv",
+      "path": "https://github.com/zenlan/ords-extra/",
+      "title": "ORDS Product English Translations",
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "default",
+            "title": "ID",
+            "description": "ORDS unique identifier.",
+            "constraints": {
+              "pattern": "^[a-z]+-[0-9]+$",
+              "unique": "true"
+            }
+          },
+          {
+            "name": "partner_category",
+            "type": "string",
+            "format": "default",
+            "title": "Partner Category",
+            "description": "Category provided by the data contributor.",
+            "missingValues": [
+              ""
+            ]
+          },
+          {
+            "name": "partner_product",
+            "type": "string",
+            "format": "default",
+            "title": "Partner Product",
+            "description": "Product type provided by the data contributor.",
+            "missingValues": [
+              ""
+            ]
+          },
+          {
+            "name": "product_language",
+            "type": "string",
+            "format": "default",
+            "title": "Language Code",
+            "description": "2 character ISO language code.",
+            "constraints": {
+              "pattern": "^[a-z]{2}$"
+            }
+          },
+          {
+            "name": "en_gemma3",
+            "type": "string",
+            "format": "default",
+            "title": "Problem Text",
+            "description": "English, translation of the product type, as translated by Gemma3",
+            "missingValues": [
+              ""
+            ]
+          }
+        ],
+        "primaryKey": "id"
+      }
+    },
+    {
+      "profile": "tabular-data-resource",
+      "format": "CSV",
+      "name": "ords_unu_keys.csv",
+      "path": "https://github.com/zenlan/ords-extra/",
+      "title": "ORDS UNU key map",
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "default",
+            "title": "ID",
+            "description": "ORDS unique identifier.",
+            "constraints": {
+              "pattern": "^[a-z]+-[0-9]+$",
+              "unique": "true"
+            }
+          },
+          {
+            "name": "product_category",
+            "type": "string",
+            "format": "default",
+            "title": "ORDS Product Category.",
+            "description": "Name of the ORDS product category."
+          },
+          {
+            "name": "product",
+            "type": "string",
+            "format": "default",
+            "title": "Product name",
+            "description": "Free text product name."
+          },
+          {
+            "name": "unu_key",
+            "type": "integer",
+            "format": "default",
+            "title": "UNU ID",
+            "description": "UNU key unique ID.",
+            "constraints": {
+              "pattern": "^[0-9]+$"
+            }
+          },
+          {
+            "name": "unu_str",
+            "type": "string",
+            "format": "default",
+            "title": "UNU title",
+            "description": "UNU key text descriptor."
+          }
+        ],
+        "primaryKey": "id"
+      }
+    }
+  ]
+}
