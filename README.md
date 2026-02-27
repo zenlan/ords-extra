@@ -34,9 +34,9 @@ Over time, I have tried a variety of tools and methods to determine the language
 
 Using a combination of the above tools, I eventually developed a language detection model that worked better with the repair data `problem` text. Manual tweaking was nonetheless required and the language map will, no doubt, still contain some erroneous detections. 
 
-As of 2026, I have found that the [Gemma3 AI model](https://ollama.com/library/translategemma) can handle all of the required languages and produces translations comparable to that of DeepL. The `ords_problem_en.csv` file contains columns for some translations by DeepL, Helsinki-NLP and Google. The Gemma3 column contains all translations.
+As of 2026, I have found that the [Gemma3 AI model](https://ollama.com/library/translategemma) can handle all of the required languages and sometimes produces translations comparable to that of DeepL. Other times it has a stab at summarising what it thinks the text might say and comes to some incorrect - and some amusing - conclusions. The `ords_problem_en.csv` file contains columns for some translations by DeepL, Helsinki-NLP and Google. The Gemma3 column contains a translation attempt for each row.
 
-The `product` value is not necessarily in the same language as the `problem` text and therefore requires it's own language detection. All of the above translation tools except for Gemma3 failed to provide anywhere near adequate translations. 
+The `product` value is not necessarily in the same language as the `problem` text and therefore requires it's own language detection. Gemma3 scored marginally better than the other translation tools tried, although there are still some wild misses.
 
 ## UNU Keys
 
