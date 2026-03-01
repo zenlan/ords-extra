@@ -20,9 +20,10 @@
     {
       "profile": "tabular-data-resource",
       "format": "CSV",
-      "name": "ords_problem_en.csv",
+      "name": "ords_problem_en_[translation-tool].csv",
       "path": "https://github.com/zenlan/ords-extra/",
-      "title": "ORDS Problem English Translations",
+      "title": "ORDS Problem Text English Translations",
+      "description": "Text strings translated by the [translation-tool] referenced by the filename, e.g. 'deepl'. See the README.md for details.",
       "schema": {
         "fields": [
           {
@@ -37,7 +38,7 @@
             }
           },
           {
-            "name": "problem_language",
+            "name": "language",
             "type": "string",
             "format": "default",
             "title": "Language Code",
@@ -47,41 +48,11 @@
             }
           },
           {
-            "name": "en_gemma3",
+            "name": "en",
             "type": "string",
             "format": "default",
-            "title": "Problem Text",
-            "description": "English, free-text description of the repair attempt, as translated by Gemma3",
-            "missingValues": [
-              ""
-            ]
-          },
-          {
-            "name": "en_deepl",
-            "type": "string",
-            "format": "default",
-            "title": "Problem Text",
-            "description": "English, free-text description of the repair attempt, as translated by DeepL",
-            "missingValues": [
-              ""
-            ]
-          },
-          {
-            "name": "en_helsinkinlp",
-            "type": "string",
-            "format": "default",
-            "title": "Problem Text",
-            "description": "English, free-text description of the repair attempt, as translated by Helsinki-NLP",
-            "missingValues": [
-              ""
-            ]
-          },
-          {
-            "name": "en_google",
-            "type": "string",
-            "format": "default",
-            "title": "Problem Text",
-            "description": "English, free-text description of the repair attempt, as translated by Google",
+            "title": "English Problem Text",
+            "description": "English, free-text description of the repair attempt",
             "missingValues": [
               ""
             ]
@@ -130,7 +101,7 @@
             ]
           },
           {
-            "name": "product_language",
+            "name": "language",
             "type": "string",
             "format": "default",
             "title": "Language Code",
@@ -140,11 +111,11 @@
             }
           },
           {
-            "name": "en_gemma3",
+            "name": "en",
             "type": "string",
             "format": "default",
             "title": "Problem Text",
-            "description": "English, translation of the product type, as translated by Gemma3",
+            "description": "English, translation of the product type",
             "missingValues": [
               ""
             ]
@@ -158,7 +129,7 @@
       "format": "CSV",
       "name": "ords_unu_keys.csv",
       "path": "https://github.com/zenlan/ords-extra/",
-      "title": "ORDS UNU key map",
+      "title": "ORDS UNU Key Map",
       "schema": {
         "fields": [
           {
@@ -183,15 +154,15 @@
             "name": "product",
             "type": "string",
             "format": "default",
-            "title": "Product name",
+            "title": "Product Name",
             "description": "Free text product name."
           },
           {
             "name": "unu_key",
             "type": "integer",
             "format": "default",
-            "title": "UNU ID",
-            "description": "UNU key unique ID.",
+            "title": "UNU Key ID",
+            "description": "UNU key unique identifier.",
             "constraints": {
               "pattern": "^[0-9]+$"
             }
@@ -200,8 +171,8 @@
             "name": "unu_str",
             "type": "string",
             "format": "default",
-            "title": "UNU title",
-            "description": "UNU key text descriptor."
+            "title": "UNU Key Title",
+            "description": "UNU key text description."
           }
         ],
         "primaryKey": "id"

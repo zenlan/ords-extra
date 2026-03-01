@@ -2,8 +2,6 @@
 
 Additional data for the 2025-07 ORDS dataset from the Open Repair Alliance.
 
-New columns with values resulting from a combination of translation tools, regex matching scripts and a little machine learning.
-
 NOTE: accuracy is not guaranteed!
 
 ## Licence
@@ -18,9 +16,13 @@ You can get the ORDS data in a [zipfile](https://openrepair.org/open-data/downlo
 
 ## Files
 
-* `ords_problem_en.csv` English translation and 2 char ISO language code for each `problem` value.
-* `ords_product_en.csv` English translation and 2 char ISO language code for each derived `product` value.
+* `ords_problem_en_deepl.csv` ISO language code and english translation of `problem` text by the DeepL API.
+* `ords_problem_en_gemma.csv` ISO language code and english translation of `problem` text by 'gemmatranslate', a model based on Gemma3.
+* `ords_problem_en_opusmt.csv` ISO language code and english translation of `problem` text by Helsinki NLP Opus MT.
+* `ords_product_en.csv` ISO language code and english translation of `partner_product_category` values by 'gemmatranslate' based on Gemma3.
 * `ords_unu_keys.csv` United Nations University (Unitar) categorisation.
+
+The translation files contain rows for non-English `problem` or `product` strings only.
 
 ## Translations
 
@@ -30,11 +32,21 @@ Repair data is hardly grammatically well-formed, it can contain international ch
 
 ### Language detection
 
-Over time, I have tried a variety of tools and methods to determine the language and translate the `problem` text. Google detect/translate is adequate to a point, DeepL somewhat better but not free, while Helsinki NLP doesn't detect, can produce iffy translations and does not have all of the language models required. 
+Over time, I have tried a variety of tools and methods to determine the language and translate the `problem` text. Google detect is very poor with short strings and often gets Danish/Dutch/German confused, DeepL somewhat better but not free, while Helsinki NLP doesn't detect.
 
-Using a combination of the above tools, I eventually developed a language detection model that worked better with the repair data `problem` text. Manual tweaking was nonetheless required and the language map will, no doubt, still contain some erroneous detections. 
+I trained a small model on repair data and it is fairly successful at language detection. Manual tweaking is nonetheless required and the language map will still contain some erroneous detections.
 
-As of 2026, I have found that the [Gemma3 AI model](https://ollama.com/library/translategemma) can handle all of the required languages and sometimes produces translations comparable to that of DeepL. Other times it has a stab at summarising what it thinks the text might say and comes to some incorrect - and some amusing - conclusions. The `ords_problem_en.csv` file contains columns for some translations by DeepL, Helsinki-NLP and Google. The Gemma3 column contains a translation attempt for each row.
+### Translation Tools
+
+#### Problem Text
+
+* [Gemma3 Translation Model](https://ollama.com/library/translategemma) has a stab at summarising what it thinks the text might say. Sometimes it produces the opposite meaning.
+
+* [Helsinki-NLP](https://huggingface.co/Helsinki-NLP) can produce some very weird results and likes to inject the ocassional profanity.
+
+* [DeepL API](https://www.deepl.com/en/translator) is probably the best of the three. Am relying on the free monthly allowance so DeepL translations are not yet complete.
+
+#### Products
 
 The `product` value is not necessarily in the same language as the `problem` text and therefore requires it's own language detection. Gemma3 scored marginally better than the other translation tools tried, although there are still some wild misses.
 
