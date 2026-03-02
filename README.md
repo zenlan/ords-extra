@@ -16,25 +16,27 @@ You can get the ORDS data in a [zipfile](https://openrepair.org/open-data/downlo
 
 ## Files
 
-* `ords_problem_en_deepl.csv` ISO language code and english translation of `problem` text by the DeepL API.
-* `ords_problem_en_gemma.csv` ISO language code and english translation of `problem` text by 'gemmatranslate', a model based on Gemma3.
-* `ords_problem_en_opusmt.csv` ISO language code and english translation of `problem` text by Helsinki NLP Opus MT.
-* `ords_product_en.csv` ISO language code and english translation of `partner_product_category` values by 'gemmatranslate' based on Gemma3.
+* `ords_problem_en_deepl.csv` ISO language code and english translation of `problem` text using the DeepL API.
+* `ords_problem_en_gemma.csv` ISO language code and english translation of `problem` text using "gemmatranslate" locally, a model based on Gemma3.
+* `ords_problem_en_opusmt.csv` ISO language code and english translation of `problem` text using Opus-MT models from the Helsinki-NLP project.
+* `ords_product_en.csv` ISO language code and english translation of `partner_product_category` values using 'gemmatranslate' locally, a model based on Gemma3.
 * `ords_unu_keys.csv` United Nations University (Unitar) categorisation.
 
 The translation files contain rows for non-English `problem` or `product` strings only.
 
 ## Translations
 
-Repair data arrives from all over the world without any indication of the language used in each record. At last count there are at least 10 languages represented. The majority of records use one of English, German, Dutch, French or Danish, but there is also some Italian, Spanish, Chinese, Korean and Welsh to be found.
-
-Repair data is hardly grammatically well-formed, it can contain spelling mistakes, abbreviations, colloquialisms, acronyms, jargon, emojis, brand names, markup, markdown, html and non-printing characters. A lot of data cleaning is carried out prior to publication.
+Repair data arrives once a year from all over the world and is hardly grammatically well-formed, often scribbled in the midst of a busy, noisy, messy community repair event. It can contain spelling mistakes, abbreviations, colloquialisms, acronyms, jargon, emojis, brand names, markup, markdown, html and non-printing characters. A lot of data cleaning is carried out prior to publication.
 
 ### Language detection
+
+ The datasets arrive with no indication of the language used in each record. At last count there are at least 10 languages represented. The majority of records use one of English, German, Dutch, or French, but there is also some Italian, Spanish, Danish, Norwegian, Chinese, Korean and Welsh to be found.
 
 Over time, I have tried a variety of tools and methods to determine the language and translate the `problem` text. Google detect is very poor with short strings and often gets Danish/Dutch/German confused, DeepL somewhat better but not free.
 
 I trained a small language detection model on repair data and it is fairly successful. Manual tweaking is nonetheless required and the language map will still contain some erroneous detections.
+
+The `product` value is not always in the same language as the `problem` text and therefore requires it's own language detection. TranslateGemma scored marginally better at detection and translation for these short strings than some of the others, although there are still some wild misses.
 
 ### Translation Tools
 
@@ -48,7 +50,7 @@ I trained a small language detection model on repair data and it is fairly succe
 
 #### Products
 
-The `product` value is not necessarily in the same language as the `problem` text and therefore requires it's own language detection. TranslateGemma scored marginally better than the other translation tools tried, although there are still some wild misses.
+ORDS data contains a column that lists the categoory and/or type of product as provided by the contributor. Not all of the partner networks use a standardised set of categories to describe the item brought in for repair, often it is free text. Even when a list is used, miscategorisation is common. The ORDS data maps these product types and categories to it's own standard category set as best it can. See below, "UNU Keys" for an alternative and widely recognised category set.
 
 ## UNU Keys
 
