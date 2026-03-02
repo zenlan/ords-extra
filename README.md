@@ -28,27 +28,27 @@ The translation files contain rows for non-English `problem` or `product` string
 
 Repair data arrives from all over the world without any indication of the language used in each record. At last count there are at least 10 languages represented. The majority of records use one of English, German, Dutch, French or Danish, but there is also some Italian, Spanish, Chinese, Korean and Welsh to be found.
 
-Repair data is hardly grammatically well-formed, it can contain international characters, spelling mistakes, abbreviations, acronyms, jargon, emojis and brand names.
+Repair data is hardly grammatically well-formed, it can contain spelling mistakes, abbreviations, colloquialisms, acronyms, jargon, emojis, brand names, markup, markdown, html and non-printing characters. A lot of data cleaning is carried out prior to publication.
 
 ### Language detection
 
-Over time, I have tried a variety of tools and methods to determine the language and translate the `problem` text. Google detect is very poor with short strings and often gets Danish/Dutch/German confused, DeepL somewhat better but not free, while Helsinki NLP doesn't detect.
+Over time, I have tried a variety of tools and methods to determine the language and translate the `problem` text. Google detect is very poor with short strings and often gets Danish/Dutch/German confused, DeepL somewhat better but not free.
 
-I trained a small model on repair data and it is fairly successful at language detection. Manual tweaking is nonetheless required and the language map will still contain some erroneous detections.
+I trained a small language detection model on repair data and it is fairly successful. Manual tweaking is nonetheless required and the language map will still contain some erroneous detections.
 
 ### Translation Tools
 
 #### Problem Text
 
-* [Gemma3 Translation Model](https://ollama.com/library/translategemma) has a stab at summarising what it thinks the text might say. Sometimes it produces the opposite meaning.
-
-* [Helsinki-NLP](https://huggingface.co/Helsinki-NLP) can produce some very weird results and likes to inject the ocassional profanity.
-
 * [DeepL API](https://www.deepl.com/en/translator) is probably the best of the three. Am relying on the free monthly allowance so DeepL translations are not yet complete.
+
+* [TranslateGemma](https://ollama.com/library/translategemma), an open translation model built on Gemma 3 has a stab at summarising what it thinks the text might say. Sometimes it produces the opposite meaning.
+
+* [Helsinki-NLP Opus-MT](https://huggingface.co/Helsinki-NLP) can produce some very weird results and likes to inject the ocassional profanity. Does not have a Norwegian-English model.  The Opus MT models are trained using [MarianNMT](https://marian-nmt.github.io/), the same engine used by [Mozilla](https://mozilla.github.io/translations/docs/) for the Firefox translator.
 
 #### Products
 
-The `product` value is not necessarily in the same language as the `problem` text and therefore requires it's own language detection. Gemma3 scored marginally better than the other translation tools tried, although there are still some wild misses.
+The `product` value is not necessarily in the same language as the `problem` text and therefore requires it's own language detection. TranslateGemma scored marginally better than the other translation tools tried, although there are still some wild misses.
 
 ## UNU Keys
 
