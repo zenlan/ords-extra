@@ -42,11 +42,11 @@ The `product` value is not always in the same language as the `problem` text and
 
 #### Problem Text
 
-* [DeepL API](https://www.deepl.com/en/translator) is probably the best of the three. Am relying on the free monthly allowance so DeepL translations are not yet complete.
+* [DeepL API](https://www.deepl.com/en/translator) is probably the best of the three. Am relying on the free monthly allowance, so it takes some time to complete DeepL translations.
 
 * [TranslateGemma](https://ollama.com/library/translategemma), an open translation model built on Gemma 3 has a stab at summarising what it thinks the text might say. Sometimes it produces the opposite meaning.
 
-* [Helsinki-NLP Opus-MT](https://huggingface.co/Helsinki-NLP) can produce some very weird results and likes to inject the ocassional profanity. Does not have a Norwegian-English model.  The Opus MT models are trained using [MarianNMT](https://marian-nmt.github.io/), the same engine used by [Mozilla](https://mozilla.github.io/translations/docs/) for the Firefox translator.
+* [Helsinki-NLP Opus-MT](https://huggingface.co/Helsinki-NLP) can produce some very weird results and likes to inject the ocassional profanity. Does not have a Norwegian-English model. The Opus MT models are trained using [MarianNMT](https://marian-nmt.github.io/), the same engine used by [Mozilla](https://mozilla.github.io/translations/docs/) for the Firefox translator.
 
 #### Products
 
