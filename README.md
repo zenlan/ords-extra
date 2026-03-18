@@ -19,7 +19,7 @@ You can get the ORDS data in a [zipfile](https://openrepair.org/open-data/downlo
 * `ords_problem_en_deepl.csv` ISO language code and english translation of `problem` text using the DeepL API.
 * `ords_problem_en_gemma.csv` ISO language code and english translation of `problem` text using "gemmatranslate" locally, a model based on Gemma3.
 * `ords_problem_en_opusmt.csv` ISO language code and english translation of `problem` text using Opus-MT models from the Helsinki-NLP project.
-* `ords_product_en.csv` ISO language code and english translation of `partner_product_category` values using 'gemmatranslate' locally, a model based on Gemma3.
+* `ords_product_en.csv` ISO language code and english translations of `partner_product_category` 'product' values with both 'gemmatranslate' and DeepL translations.
 * `ords_unu_keys.csv` United Nations University (Unitar) categorisation.
 
 The translation files contain rows for non-English `problem` or `product` strings only.
@@ -36,7 +36,7 @@ Over time, I have tried a variety of tools and methods to determine the language
 
 I trained a small language detection model on repair data and it is fairly successful. Manual tweaking is nonetheless required and the language map will still contain some erroneous detections.
 
-The `product` value is not always in the same language as the `problem` text and therefore requires it's own language detection. TranslateGemma scored marginally better at detection and translation for these short strings than some of the others, although there are still some wild misses.
+The `product` value is not always in the same language as the `problem` text and therefore requires it's own language detection. TranslateGemma and DeepL scored marginally better at detection and translation for these short strings than some other translators, although there are still some wild mistranslations and the detected language required manual correction. Note that it is not uncommon to find a "brand name" used as a product type, e.g. "Hoover", "Karcher", "Nespresso". These should be assigned language English as they do not want translating, e.g. "Dolce Gusto" is identifiable as a type of coffee machine although it literally translates to "sweet taste".
 
 ### Translation Tools
 
@@ -50,7 +50,7 @@ The `product` value is not always in the same language as the `problem` text and
 
 #### Products
 
-ORDS data contains a column that lists the categoory and/or type of product as provided by the contributor. Not all of the partner networks use a standardised set of categories to describe the item brought in for repair, often it is free text. Even when a list is used, miscategorisation is common. The ORDS data maps these product types and categories to it's own standard category set as best it can. See below, "UNU Keys" for an alternative and widely recognised category set.
+ORDS data contains a column that lists the categoory and/or type of product as provided by the contributor. Not all of the partner networks use a standardised set of categories or product types to describe the item brought in for repair, often it is free text. Even when a list is used, miscategorisation is common. The ORDS data maps these product types and categories to it's own standard category set as best it can. See below, "UNU Keys" for an alternative and widely recognised category set.
 
 ## UNU Keys
 

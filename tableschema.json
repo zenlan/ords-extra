@@ -84,7 +84,7 @@
             "name": "partner_category",
             "type": "string",
             "format": "default",
-            "title": "Partner Category",
+            "title": "Product Category",
             "description": "Category provided by the data contributor.",
             "missingValues": [
               ""
@@ -94,7 +94,7 @@
             "name": "partner_product",
             "type": "string",
             "format": "default",
-            "title": "Partner Product",
+            "title": "Product Type",
             "description": "Product type provided by the data contributor.",
             "missingValues": [
               ""
@@ -111,11 +111,21 @@
             }
           },
           {
-            "name": "en",
+            "name": "en_gemma",
             "type": "string",
             "format": "default",
-            "title": "Problem Text",
-            "description": "English, translation of the product type",
+            "title": "Product English - GemmaTranslate",
+            "description": "English translation of the product type as translated using a Gemma3 translation LLM.",
+            "missingValues": [
+              ""
+            ]
+          },
+          {
+            "name": "en_deepl",
+            "type": "string",
+            "format": "default",
+            "title": "Product English - DeepL",
+            "description": "English translation of the product type as translated using the DeepL API.",
             "missingValues": [
               ""
             ]
